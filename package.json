@@ -4,9 +4,17 @@
   "private": true,
   "homepage": "http://lukemckinstry.github.io/sample-cra",
   "dependencies": {
+    "@material-ui/core": "^4.5.1",
+    "@material-ui/icons": "^4.5.1",
+    "font-awesome": "^4.7.0",
+    "material-ui": "^0.20.2",
+    "moment": "^2.24.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-google-charts": "^3.0.15",
+    "react-moment": "^0.9.6",
+    "react-scripts": "3.2.0",
+    "typeface-roboto": "0.0.75"
   },
   "scripts": {
     "start": "react-scripts start",
