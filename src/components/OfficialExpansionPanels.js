@@ -67,7 +67,7 @@ export default function OfficialExpansionPanel() {
             <Chart
               chartType="Calendar"
               data={combo}
-              width="1000px"
+              width="100%"
               height="200px"
               loader={<div>Loading Chart</div>}
               rootProps={{ 'data-testid': '1' }}
