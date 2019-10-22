@@ -24,8 +24,6 @@ const useStyles = makeStyles(theme => ({
 export default function PageHeader() {
   const classes = useStyles();
 
-  console.log('summary --> ', summary)
-
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>

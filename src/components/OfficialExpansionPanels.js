@@ -15,9 +15,6 @@ import DoneIcon from '@material-ui/icons/Done';
 import Link from '@material-ui/core/Link';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import 'typeface-roboto';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -46,8 +43,6 @@ const useStyles = makeStyles(theme => ({
 export default function OfficialExpansionPanel() {
 
   const classes = useStyles();
-
-  console.log('data!!! ', officials)
 
   const renderCalendar = (obj, i) => {
 
