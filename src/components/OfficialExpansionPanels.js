@@ -11,6 +11,7 @@ import Chip from '@material-ui/core/Chip';
 import FaceIcon from '@material-ui/icons/Face';
 import DoneIcon from '@material-ui/icons/Done';
 
+import Link from '@material-ui/core/Link';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -37,28 +38,24 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function SimpleExpansionPanel() {
+export default function OfficialExpansionPanel() {
 
   const classes = useStyles();
 
-  const handleDelete = () => {
-    alert('You clicked the delete icon.');
-  };
+  console.log('data!!! ', sample)
 
-  const handleClick = () => {
-    alert('You clicked the Chip.');
-  };
+  const renderCalendar = (obj, i) => {
 
-  const renderCalendar = (arr, i) => {
+      var data = Object.keys(obj).map(function(key) {
+         return {date: key, num: obj[key]};
+      });
       
-      const formatted = arr.map(x => [new Date(x),1]);
+      const formatted = data.map(x => [new Date(x.date),x.num]);
 
       const combo = [...[[ { type: 'date', id: 'Date' },
                            { type: 'number', id: 'tweet' }]],
                            ...formatted,
                            ...[[new Date(),0]]]
-
-      console.log('combo ', combo)
 
       return (
           <div className={"my-pretty-chart-container"}>
@@ -74,36 +71,12 @@ export default function SimpleExpansionPanel() {
       );
     }
 
-  const renderHashtags = (ht, i) => {
-      return (
-          
-          <Chip
-                avatar={<Avatar>#</Avatar>}
-                label={ht}
-                clickable
-                color="primary"
-              />
-      );
-    }
-
-  const renderUserMentions = (um, i) => {
-      return (
-          
-          <Chip
-                avatar={<Avatar>@</Avatar>}
-                label={um}
-                clickable
-                color="primary"
-              />
-      );
-  }
-
+  const preventDefault = event => event.preventDefault();
 
   const renderPanels = (official, i) => {
       return (
-          <div>
-          
-          <ExpansionPanel>
+          <div key={i} >
+          <ExpansionPanel >
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -112,7 +85,12 @@ export default function SimpleExpansionPanel() {
               <Avatar className={classes.avatar}>{official.state}</Avatar>
               <Avatar alt={official.display_name} src={official.photo_url} className={classes.bigAvatar} />
               <Typography variant="h4" component="h4">
-                {official.display_name}
+                {official.display_name} 
+              </Typography>
+              <Typography variant="h4" component="h4">
+                <Link href="#" onClick={preventDefault} className={classes.link}>
+                  @{official.display_name} 
+                </Link>
               </Typography>
               <Typography variant="h6" component="h6">
                 {official.title}
@@ -121,38 +99,20 @@ export default function SimpleExpansionPanel() {
             <ExpansionPanelDetails>
             <List className={classes.root}>
               <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    
-                  </Avatar>
-                </ListItemAvatar>
                 <ListItemText primary="Hashtags"/>
                 <HashtagChips data={official.hashtags}/>
               </ListItem>
               <Divider variant="inset" component="li" />
               <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    
-                  </Avatar>
-                </ListItemAvatar>
                 <ListItemText primary="User Mentions"/>
-                
                 <UserMentionChips data={official.usermentions}/>
               </ListItem>
               <Divider variant="inset" component="li" />
               <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    
-                  </Avatar>
-                </ListItemAvatar>
                 <ListItemText primary="Tweet Dates"/>
                 {renderCalendar( official.dates )}
               </ListItem>
             </List>
-              
-
             </ExpansionPanelDetails>
           </ExpansionPanel>
           </div>
@@ -161,9 +121,9 @@ export default function SimpleExpansionPanel() {
 
     return (
       
-          <div style={{'maxHeight': 'calc(100vh - 210px)', 'overflowY': 'auto'}}  >
+          <div  >
             { sample.map(renderPanels) }
-            </div>      
+          </div>      
     )
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
 //import PageContainer from './components/PageContainer.js'
-import SimpleExpansionPanels from './components/SimpleExpansionPanels.js'
+import OfficialExpansionPanels from './components/OfficialExpansionPanels.js'
 
 
 function App() {
   return (
-      <SimpleExpansionPanels/>
+      <OfficialExpansionPanels/>
 
   );
 }
