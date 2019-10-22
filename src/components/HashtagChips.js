@@ -20,7 +20,9 @@ const useHashtagStyles = makeStyles(theme => ({
 
 export default function HashtagChips(props) {
   const classes = useHashtagStyles();
-  const data = {...props.data} 
+  const data = {...props.data}
+
+  console.log( 'loaded data ', data ) 
   var data_arr = Object.keys(data).map(function(key) {
          return  data[key];
       });
