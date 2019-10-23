@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -18,7 +18,8 @@ import ListItem from '@material-ui/core/ListItem';
 import 'typeface-roboto';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
-
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 
 import { Chart } from "react-google-charts";
 import officials from '../officials.js';
@@ -43,6 +44,7 @@ const useStyles = makeStyles(theme => ({
 export default function OfficialExpansionPanel() {
 
   const classes = useStyles();
+  const [officialsState, setOfficialsState] = useState(officials.slice(0,10));
 
   const renderCalendar = (obj, i) => {
 
@@ -74,6 +76,7 @@ export default function OfficialExpansionPanel() {
   const preventDefault = event => event.preventDefault();
 
   const renderPanels = (official, i) => {
+
       return (
           <div key={i} >
           <ExpansionPanel >
@@ -171,10 +174,27 @@ export default function OfficialExpansionPanel() {
       );
     }
 
-    return (        
-          <div  >
+    const handleClick = () => {
+      setOfficialsState(officialsState => {
+        const arrayBreak = officialsState.length; 
+        const addOfficials = officials.slice(arrayBreak,arrayBreak+10)
+        return [...officialsState,...addOfficials] 
+        });
+    }
+
+    return (
+          <div >
             <PageHeader/>
-            { officials.map(renderPanels) }
+              <div>
+              { officialsState.map(renderPanels) }
+              <Box display="flex" p={2} justifyContent="center" bgcolor="background.paper">
+                <Button variant="contained" color="primary" onClick={() => { handleClick() }}>
+                    Load More 
+                </Button>
+              </Box>
+            </div>
+            
+
           </div>      
     )
 }
