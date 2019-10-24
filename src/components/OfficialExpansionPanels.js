@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Avatar from '@material-ui/core/Avatar';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
+
 import Chip from '@material-ui/core/Chip';
 import FaceIcon from '@material-ui/icons/Face';
 import DoneIcon from '@material-ui/icons/Done';
@@ -26,6 +27,7 @@ import officials from '../officials.js';
 
 import HashtagChips from './HashtagChips';
 import UserMentionChips from './UserMentionChips';
+import PlaceChips from './PlaceChips';
 import PageHeader from './PageHeader.js'
 
 
@@ -155,6 +157,23 @@ export default function OfficialExpansionPanel() {
                 </Grid>
               </ListItem>
               <Divider variant="inset" component="li" />
+              { !(Object.keys(official.places).length === 0 && official.places.constructor === Object)  &&
+              <div>
+              <ListItem>
+                <Grid container spacing={3}>
+                  <Grid item xs={2}>
+                    <Typography variant="h6" component="h3">
+                      Recent Places
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={10}>
+                    <PlaceChips data={official.places}/>
+                  </Grid>
+                </Grid>
+              </ListItem>
+              <Divider variant="inset" component="li" />
+              </div>
+            }
               <ListItem>
                 <Grid container spacing={3}>
                   <Grid item xs={2}>
