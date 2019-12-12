@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/mayors-on-twitter-graphic/static/js/main.e0327faf.chunk.js",
+    "main.js.map": "/mayors-on-twitter-graphic/static/js/main.e0327faf.chunk.js.map",
+    "runtime-main.js": "/mayors-on-twitter-graphic/static/js/runtime-main.4143e7a8.js",
+    "runtime-main.js.map": "/mayors-on-twitter-graphic/static/js/runtime-main.4143e7a8.js.map",
+    "static/css/2.52e38dc4.chunk.css": "/mayors-on-twitter-graphic/static/css/2.52e38dc4.chunk.css",
+    "static/js/2.bd6e72de.chunk.js": "/mayors-on-twitter-graphic/static/js/2.bd6e72de.chunk.js",
+    "static/js/2.bd6e72de.chunk.js.map": "/mayors-on-twitter-graphic/static/js/2.bd6e72de.chunk.js.map",
+    "index.html": "/mayors-on-twitter-graphic/index.html",
+    "precache-manifest.55d8932e59cba5e817612a3927e4221e.js": "/mayors-on-twitter-graphic/precache-manifest.55d8932e59cba5e817612a3927e4221e.js",
+    "service-worker.js": "/mayors-on-twitter-graphic/service-worker.js",
+    "static/css/2.52e38dc4.chunk.css.map": "/mayors-on-twitter-graphic/static/css/2.52e38dc4.chunk.css.map",
+    "static/js/2.bd6e72de.chunk.js.LICENSE": "/mayors-on-twitter-graphic/static/js/2.bd6e72de.chunk.js.LICENSE",
+    "static/media/index.css": "/mayors-on-twitter-graphic/static/media/roboto-latin-900italic.ebf6d164.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4143e7a8.js",
+    "static/css/2.52e38dc4.chunk.css",
+    "static/js/2.bd6e72de.chunk.js",
+    "static/js/main.e0327faf.chunk.js"
+  ]
+}
